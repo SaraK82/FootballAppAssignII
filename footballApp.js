@@ -60,7 +60,7 @@ subPlayers.forEach(element=>{
 //5.
 const gameOdd = game.odds
 const{team1, draw, team2} = gameOdd
-console.log(draw)
+//console.log(draw)
 
 //6.
 function printGoals(...names){
@@ -72,17 +72,23 @@ function printGoals(...names){
 printGoals("Davies","Muller","Lewandowski","Kimmich")
 
 //7.
-console.log(game.odds.draw)
+
+ let entries = Object.values(game.odds);
+console.log(entries);
+
+let likelytoWin = (Math.min(...entries));
+console.log(likelytoWin);
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
+  
+  const winer = (getKeyByValue(game.odds,likelytoWin));
+  console.log(`Winner is ${winer}`)
 
 
 
 
 
-
-
-
-
-
- 
 
 
